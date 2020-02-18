@@ -7,3 +7,9 @@ https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/abo
 Install-Module -Name PSScriptAnalyzer
 Invoke-ScriptAnalyzer myscript.ps1
 ```
+
+```
+Get-WinEvent -LogName *PowerShell*, Microsoft-Windows-Kernel-WHEA* |
+  Group-Object -Property LevelDisplayName, LogName -NoElement |
+    Format-Table -AutoSize
+```
